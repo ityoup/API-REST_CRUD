@@ -11,7 +11,9 @@ ruta.get('/bienvenido/:nombre/:edad', bievenido);
 
 ruta.get('/personas/:estudiante', personas)
 
-ruta.get('/todos', todos)
+ruta.get('/todos', actualizarNew);
+
+ruta.get('/json', todos)
 
 ruta.get('/insertar/:posicion/:nombre', insertar)
 

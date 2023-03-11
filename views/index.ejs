@@ -8,35 +8,33 @@
     <title>Document</title>
 </head>
 <body>
+  <br>
     <div style="display: flex; justify-content: center; align-items: center;">
     <form action="/actualizar", method="post">
         <div class="form-group">
-          <label>Nombre:</label>
+         <b><label>Nombre:</label></b>
           <input name="nombre" type="text" class="form-control" id="email">
         </div>
         <div class="form-group">
-          <label for="pwd">Posicion a cambiar:</label>
+          <b><label for="pwd">Posicion:</label></b>
           <input name="posicion" type="number" class="form-control" id="pwd">
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-primary">Cambiar</button>
       </form>
     </div>
-    <table>
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Nombre</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% for (const key in data) { %>
-            <tr>
-              <td><%= key %></td>
-              <td><%= data[key] %></td>
-            </tr>
-          <% } %>
-        </tbody>
-      </table>
+    <br>
+    <div class="grupo" style="display: grid; grid-template-columns: 18rem 18rem;justify-content: center; gap: 30px;">
+    <% for (const key in data) { %>
+    <div class="card" style="width: 18rem; margin: 10px;">
       
+      <img class="card-img-top" src="https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%= data[key] %></h5>
+        <p class="card-text">Posicion: <%= key %> </p>
+        
+      </div>
+    </div>
+    <% } %>
+  </div>
 </body>
 </html>
